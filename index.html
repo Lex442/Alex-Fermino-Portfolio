@@ -22,7 +22,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -187,6 +186,12 @@
       gap: 18px;
     }
 
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
     .card {
       background: linear-gradient(180deg, rgba(28,40,59,.92), rgba(11,19,31,.96));
       border: 1px solid rgba(255,255,255,.1);
@@ -207,6 +212,10 @@
       object-fit: cover;
       display: block;
       background: #172131;
+    }
+
+    .gallery-grid .card img {
+      height: 240px;
     }
 
     .card-body {
@@ -410,6 +419,7 @@
 
     @media (max-width: 1100px) {
       .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
       .hero p { font-size: 18px; }
       .btn { font-size: 18px; }
     }
@@ -423,7 +433,8 @@
       }
       .avatar { margin: 0 auto; width: 120px; height: 120px; }
       .hero-actions { justify-content: center; }
-      .projects-grid { grid-template-columns: 1fr; }
+      .projects-grid,
+      .gallery-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
       .section { padding: 22px 14px; }
       .timeline { padding-left: 28px; }
@@ -443,12 +454,12 @@
     </div>
 
     <header class="hero">
-      <img class="avatar" src="perfil.jpg" alt="Foto de Alex Fermino" onerror="this.src='https://placehold.co/300x300/1f2937/e5e7eb?text=Alex'">
+      <img class="avatar" src="images/perfil.jpg" alt="Foto de Alex Fermino" onerror="this.src='https://placehold.co/300x300/1f2937/e5e7eb?text=Alex'">
 
       <div>
         <h1>Alex Fermino</h1>
         <div class="sub">Manutenção • Automação • Soluções Digitais</div>
-        <p>Crio sistemas e dispositivos para reduzir paradas, organizar a operação e transformar ideias técnicas em soluções práticas.</p>
+        <p>Crio sistemas, dispositivos e soluções visuais para reduzir paradas, organizar a operação e transformar ideias técnicas em resultados reais.</p>
 
         <div class="hero-actions">
           <a class="btn linkedin" href="https://www.linkedin.com/in/alex-fermino-44722563" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -463,38 +474,38 @@
 
       <div class="projects-grid">
         <article class="card">
-          <img src="carregador.jpg" alt="Carregador Inteligente" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Carregador'">
+          <img src="images/carregador.png" alt="Carregador Inteligente" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Carregador'">
           <div class="card-body">
             <h3>Carregador Inteligente</h3>
-            <p>Carregador seguro com indicadores LED para paleteiras elétricas e baterias de uso industrial.</p>
-            <a class="more" href="#">Ver Detalhes</a>
+            <p>Carregador eletrônico com controle de tensão e aplicação voltada ao carregamento seguro de baterias e paleteiras elétricas.</p>
+            <a class="more" href="#laboratorio">Ver Detalhes</a>
           </div>
         </article>
 
         <article class="card">
-          <img src="procedimento.jpg" alt="Criador de Procedimentos" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Procedimentos'">
+          <img src="images/3d.jpg" alt="Projeto 3D" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Impressao+3D'">
           <div class="card-body">
-            <h3>Criador de Procedimentos</h3>
-            <p>Gerador de procedimentos técnicos com fotos, passo a passo e padronização operacional.</p>
-            <a class="more" href="#">Ver Detalhes</a>
+            <h3>Projetos em Impressão 3D</h3>
+            <p>Modelagem e fabricação de peças técnicas para prototipagem, sensores, suportes e melhorias aplicadas.</p>
+            <a class="more" href="#laboratorio">Ver Detalhes</a>
           </div>
         </article>
 
         <article class="card">
-          <img src="dashboard.jpg" alt="Dashboard de Produção" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Dashboard'">
+          <img src="images/painel de paradas de maquina.jpg" alt="Dashboard de Produção" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Dashboard'">
           <div class="card-body">
             <h3>Dashboard de Produção</h3>
-            <p>Painel visual para acompanhar produção, indicadores, tempos de parada e eficiência.</p>
-            <a class="more" href="#">Ver Detalhes</a>
+            <p>Painel visual para acompanhar produção, tempos de parada, status de máquina e indicadores operacionais.</p>
+            <a class="more" href="#laboratorio">Ver Detalhes</a>
           </div>
         </article>
 
         <article class="card">
-          <img src="esp32.jpg" alt="Monitoramento com ESP32" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=ESP32'">
+          <img src="images/Sensor de rotacao.jpg" alt="Monitoramento com ESP32" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Monitoramento'">
           <div class="card-body">
             <h3>Monitoramento com ESP32</h3>
-            <p>Sistema de log e status para monitoramento de máquina, rotação, tempo rodado e eventos.</p>
-            <a class="more" href="#">Ver Detalhes</a>
+            <p>Sistema com sensor e lógica de monitoramento para acompanhar rotação, parada e comportamento da máquina.</p>
+            <a class="more" href="#laboratorio">Ver Detalhes</a>
           </div>
         </article>
       </div>
@@ -505,30 +516,84 @@
       <div class="skills-box">
         <ul class="skills-list">
           <li>Automação Industrial</li>
-          <li>HTML, JavaScript, Node-RED</li>
-          <li>Impressão 3D / Prototipagem</li>
+          <li>HTML, JavaScript e Node-RED</li>
+          <li>Impressão 3D e Prototipagem</li>
           <li>ESP32, Arduino e sistemas embarcados</li>
+          <li>Desenvolvimento de dispositivos e soluções práticas</li>
         </ul>
+      </div>
+    </section>
+
+    <section class="section" id="laboratorio">
+      <h2 class="section-title"><span>Laboratório e Desenvolvimento</span></h2>
+
+      <div class="gallery-grid">
+        <article class="card">
+          <img src="images/Laboratorio.jpg" alt="Laboratório" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Laboratorio'">
+          <div class="card-body">
+            <h3>Laboratório em Casa</h3>
+            <p>Espaço montado para desenvolver eletrônica, automação, modelagem 3D e testes práticos de projetos.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/impressora.jpg" alt="Impressora 3D" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Impressora'">
+          <div class="card-body">
+            <h3>Impressora 3D</h3>
+            <p>Uso da impressora 3D para produzir peças funcionais, suportes, caixas e componentes personalizados.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/Case para impressora.jpg" alt="Case da impressora" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Case'">
+          <div class="card-body">
+            <h3>Case para Impressora</h3>
+            <p>Estrutura desenvolvida para melhorar o uso da impressora e dar mais controle ao ambiente de impressão.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/Central de carregamento.jpg" alt="Central de carregamento" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Central+de+Carregamento'">
+          <div class="card-body">
+            <h3>Central de Carregamento</h3>
+            <p>Sinalização visual do processo de carga, tornando o uso mais intuitivo e seguro no ambiente de trabalho.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/Caixa voltimetro.jpg" alt="Caixa com voltímetro" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Caixa+Voltimetro'">
+          <div class="card-body">
+            <h3>Caixa com Voltímetro</h3>
+            <p>Caixa desenvolvida para abrigar componentes eletrônicos e facilitar visualização e controle do sistema.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/Conector ar.jpg" alt="Conector de ar" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Conector'">
+          <div class="card-body">
+            <h3>Conector de Ar</h3>
+            <p>Exemplo de projeto funcional voltado a adaptação, melhoria e aplicação prática em ambiente técnico.</p>
+          </div>
+        </article>
       </div>
     </section>
 
     <section class="section" id="experiencia">
       <h2 class="section-title"><span>Experiência</span></h2>
       <div class="timeline">
-
         <div class="timeline-item">
           <div class="timeline-card">
             <div class="timeline-period">Atual</div>
-            <h3>Técnico de Manutenção eletrica</h3>
-            <p>Atuação com análise técnica, testes e validação de sistemas e equipamentos, garantindo funcionamento correto e confiabilidade dos processos.</p>
+            <h3>Técnico de Manutenção Elétrica</h3>
+            <p>Atuação com manutenção elétrica, diagnóstico de falhas, reparos e suporte técnico em ambiente industrial.</p>
           </div>
         </div>
 
         <div class="timeline-item">
           <div class="timeline-card">
             <div class="timeline-period">Cargo anterior</div>
-            <h3>Técnico de Manutemção</h3>
-            <p>Responsável por executar testes técnicos, análise de funcionamento e diagnóstico de equipamentos e sistemas.</p>
+            <h3>Técnico de Manutenção</h3>
+            <p>Execução de manutenção corretiva e preventiva, apoio técnico e acompanhamento de equipamentos e sistemas.</p>
           </div>
         </div>
 
@@ -536,10 +601,9 @@
           <div class="timeline-card">
             <div class="timeline-period">Cargo anterior</div>
             <h3>Especialista de Teste</h3>
-            <p>Manutenção elétrica industrial, diagnóstico de falhas, reparos em equipamentos e suporte técnico em ambiente produtivo.</p>
+            <p>Responsável por testes, análise de funcionamento e validação técnica de equipamentos e sistemas.</p>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -559,7 +623,7 @@
           </a>
 
           <div class="small-note">
-            Substitua os links do LinkedIn, WhatsApp, currículo PDF, foto de perfil e imagens dos projetos pelos seus arquivos reais no GitHub.
+            Se quiser, no próximo passo eu ajusto os textos dos projetos para ficar com linguagem ainda mais profissional e também posso trocar o botão “Baixar CV” para abrir seu currículo em PDF.
           </div>
         </div>
 
