@@ -1,642 +1,467 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alex Fermino | Portfólio</title>
-  <style>
-    :root {
-      --bg: #07111f;
-      --bg2: #0c1828;
-      --card: rgba(18, 30, 46, 0.92);
-      --card-2: rgba(22, 36, 56, 0.95);
-      --line: rgba(255, 255, 255, 0.12);
-      --text: #eef4ff;
-      --muted: #b6c3d8;
-      --blue: #2f8cff;
-      --blue-2: #1b65d6;
-      --green: #25d366;
-      --dark-btn: #1a2432;
-      --shadow: 0 14px 34px rgba(0,0,0,.45);
-      --radius: 20px;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alex Fermino | Portfólio Profissional</title>
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+<style>
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(59,130,246,.10), transparent 22%),
-        radial-gradient(circle at bottom right, rgba(37,211,102,.06), transparent 18%),
-        linear-gradient(180deg, #050c16 0%, #08111d 100%);
-      min-height: 100vh;
-    }
+:root{
+--bg:#07111f;
+--text:#eef4ff;
+--muted:#b6c3d8;
+--blue:#2f8cff;
+--green:#25d366;
+--shadow:0 14px 34px rgba(0,0,0,.45);
+}
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
-      background-size: 24px 24px;
-      opacity: .13;
-    }
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+color:var(--text);
+background:#07111f;
+}
 
-    .wrap {
-      width: min(1180px, calc(100% - 28px));
-      margin: 20px auto 40px;
-      border: 1px solid rgba(255,255,255,.07);
-      border-radius: 22px;
-      overflow: hidden;
-      background: linear-gradient(180deg, rgba(10,17,29,.95), rgba(8,14,24,.96));
-      box-shadow: 0 25px 80px rgba(0,0,0,.55);
-    }
+.wrap{
+width:min(1180px,calc(100% - 28px));
+margin:20px auto;
+border-radius:20px;
+overflow:hidden;
+background:#0c1828;
+box-shadow:var(--shadow);
+}
 
-    .window-bar {
-      height: 30px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 0 16px;
-      background: linear-gradient(180deg, #1c2737, #111927);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
+.hero{
+display:grid;
+grid-template-columns:180px 1fr;
+gap:24px;
+padding:34px;
+background:#111c2e;
+}
 
-    .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #5c6b80;
-    }
+.avatar{
+width:150px;
+height:150px;
+border-radius:50%;
+object-fit:cover;
+}
 
-    .dot:nth-child(1) { background: #4ea1ff; }
-    .dot:nth-child(2) { background: #3ccf7a; }
-    .dot:nth-child(3) { background: #6c7b91; }
+.hero h1{
+margin:0;
+font-size:48px;
+}
 
-    .top-bar {
-      flex: 1;
-      height: 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.08);
-      margin-left: 8px;
-    }
+.sub{
+margin-top:10px;
+font-size:22px;
+color:#d8e1ef;
+}
 
-    .hero {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 24px;
-      padding: 34px 34px 28px;
-      align-items: center;
-      background:
-        linear-gradient(180deg, rgba(23,37,58,.90), rgba(9,16,27,.92)),
-        radial-gradient(circle at left top, rgba(59,130,246,.18), transparent 30%);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
+.hero p{
+margin-top:16px;
+color:var(--muted);
+font-size:18px;
+}
 
-    .avatar {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 4px solid rgba(255,255,255,.1);
-      object-fit: cover;
-      background: linear-gradient(180deg, #d5dbe5, #8d97a8);
-      box-shadow: 0 12px 28px rgba(0,0,0,.45);
-    }
+.hero-actions{
+margin-top:20px;
+display:flex;
+gap:10px;
+}
 
-    .hero h1 {
-      margin: 0;
-      font-size: clamp(36px, 5vw, 64px);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-    }
+.btn{
+padding:12px 20px;
+border-radius:10px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+}
 
-    .sub {
-      margin-top: 8px;
-      padding-top: 12px;
-      font-size: clamp(18px, 2vw, 28px);
-      color: #d8e1ef;
-      border-top: 1px solid rgba(255,255,255,.14);
-    }
+.btn.linkedin{background:#2f8cff}
+.btn.whatsapp{background:#25d366}
+.btn.dark{background:#1a2432}
 
-    .hero p {
-      margin: 22px 0 0;
-      color: var(--muted);
-      font-size: 21px;
-      max-width: 860px;
-      line-height: 1.55;
-    }
+.section{
+padding:30px;
+border-top:1px solid rgba(255,255,255,.08);
+}
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 22px;
-    }
+.section-title{
+font-size:32px;
+margin-bottom:20px;
+}
 
-    .btn {
-      appearance: none;
-      border: 1px solid rgba(255,255,255,.16);
-      text-decoration: none;
-      color: white;
-      padding: 14px 24px;
-      border-radius: 12px;
-      font-size: 24px;
-      font-weight: 700;
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.10), 0 8px 20px rgba(0,0,0,.25);
-      transition: transform .18s ease, filter .18s ease, border-color .18s ease;
-    }
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+}
 
-    .btn:hover { transform: translateY(-2px); filter: brightness(1.08); }
-    .btn.linkedin { background: linear-gradient(180deg, #2f8cff, #1e66d8); }
-    .btn.whatsapp { background: linear-gradient(180deg, #25d366, #169b48); }
-    .btn.dark { background: linear-gradient(180deg, #293548, #151d2a); }
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
 
-    .section {
-      padding: 28px 26px 30px;
-      border-top: 1px solid rgba(255,255,255,.06);
-    }
+.card{
+background:#0f1d2f;
+border-radius:16px;
+overflow:hidden;
+box-shadow:var(--shadow);
+}
 
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 0 0 24px;
-      font-size: clamp(28px, 2vw, 38px);
-    }
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
 
-    .section-title::before,
-    .section-title::after {
-      content: "";
-      height: 1px;
-      background: rgba(255,255,255,.15);
-      flex: 1;
-    }
+.card-body{
+padding:16px;
+}
 
-    .section-title span { white-space: nowrap; }
+.card h3{
+margin:0 0 10px;
+}
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
+.card p{
+color:var(--muted);
+font-size:14px;
+}
 
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
+.more{
+display:block;
+margin-top:12px;
+text-align:center;
+padding:10px;
+background:#1a2432;
+border-radius:8px;
+text-decoration:none;
+color:white;
+}
 
-    .card {
-      background: linear-gradient(180deg, rgba(28,40,59,.92), rgba(11,19,31,.96));
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: transform .18s ease, border-color .18s ease;
-    }
+.skills-list{
+list-style:none;
+padding:0;
+margin:0;
+}
 
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(47,140,255,.45);
-    }
+.skills-list li{
+margin-bottom:10px;
+}
 
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
-      background: #172131;
-    }
+.timeline{
+display:grid;
+gap:16px;
+}
 
-    .gallery-grid .card img {
-      height: 240px;
-    }
+.timeline-card{
+background:#0f1d2f;
+padding:18px;
+border-radius:12px;
+}
 
-    .card-body {
-      padding: 18px;
-    }
+.timeline-period{
+font-weight:bold;
+margin-bottom:6px;
+}
 
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 20px;
-    }
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
 
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.5;
-      min-height: 52px;
-      font-size: 15px;
-    }
+.contact-box{
+background:#0f1d2f;
+padding:20px;
+border-radius:14px;
+}
 
-    .card .more {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      margin-top: 18px;
-      padding: 12px 14px;
-      border-radius: 10px;
-      text-decoration: none;
-      color: #f3f7ff;
-      font-weight: 700;
-      background: linear-gradient(180deg, #25364f, #152131);
-      border: 1px solid rgba(255,255,255,.12);
-    }
+.contact-item{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:12px;
+text-decoration:none;
+color:white;
+}
 
-    .skills-box,
-    .contact-box,
-    .timeline-card {
-      background: linear-gradient(180deg, rgba(22,34,52,.92), rgba(10,17,28,.95));
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-    }
+.icon{
+width:40px;
+height:40px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#1a2432;
+border-radius:8px;
+}
 
-    .skills-box {
-      padding: 18px 24px;
-    }
+.icon.green{
+background:#1faf59;
+}
 
-    .skills-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 16px;
-    }
-
-    .skills-list li {
-      position: relative;
-      padding-left: 24px;
-      color: #e3ecfa;
-      font-size: 18px;
-    }
-
-    .skills-list li::before {
-      content: "◆";
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: #8cbcff;
-      font-size: 14px;
-    }
-
-    .timeline {
-      position: relative;
-      padding-left: 34px;
-      display: grid;
-      gap: 18px;
-    }
-
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: 12px;
-      top: 8px;
-      bottom: 8px;
-      width: 3px;
-      border-radius: 4px;
-      background: rgba(255,255,255,.16);
-    }
-
-    .timeline-item {
-      position: relative;
-    }
-
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: -28px;
-      top: 20px;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: linear-gradient(180deg, #59abff, #2481ff);
-      box-shadow: 0 0 0 4px rgba(47,140,255,.15);
-    }
-
-    .timeline-card {
-      padding: 18px 22px;
-    }
-
-    .timeline-period {
-      font-weight: 800;
-      font-size: 22px;
-      color: #eaf3ff;
-      margin-bottom: 10px;
-    }
-
-    .timeline-card h3 {
-      margin: 0 0 6px;
-      font-size: 26px;
-    }
-
-    .timeline-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.5;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 24px;
-    }
-
-    .contact-box {
-      padding: 22px;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      color: #eff5ff;
-      text-decoration: none;
-      font-size: 18px;
-    }
-
-    .contact-item:last-child { border-bottom: none; }
-
-    .icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 10px;
-      display: grid;
-      place-items: center;
-      font-size: 22px;
-      font-weight: 700;
-      color: white;
-      background: linear-gradient(180deg, #2a3b53, #182436);
-      border: 1px solid rgba(255,255,255,.12);
-    }
-
-    .icon.green { background: linear-gradient(180deg, #1faf59, #14743b); }
-
-    .form {
-      display: grid;
-      gap: 14px;
-    }
-
-    .input,
-    .textarea {
-      width: 100%;
-      border: 1px solid rgba(255,255,255,.12);
-      background: linear-gradient(180deg, #1d2a3d, #121b28);
-      color: white;
-      border-radius: 10px;
-      padding: 14px 16px;
-      font-size: 16px;
-      outline: none;
-    }
-
-    .textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .submit {
-      justify-self: end;
-      min-width: 180px;
-      cursor: pointer;
-    }
-
-    .small-note {
-      color: #8ea0ba;
-      font-size: 13px;
-      margin-top: 10px;
-      line-height: 1.5;
-    }
-
-    @media (max-width: 1100px) {
-      .projects-grid { grid-template-columns: repeat(2, 1fr); }
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero p { font-size: 18px; }
-      .btn { font-size: 18px; }
-    }
-
-    @media (max-width: 760px) {
-      .wrap { width: min(100% - 12px, 100%); margin: 8px auto 20px; }
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding: 24px 18px;
-      }
-      .avatar { margin: 0 auto; width: 120px; height: 120px; }
-      .hero-actions { justify-content: center; }
-      .projects-grid,
-      .gallery-grid { grid-template-columns: 1fr; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .section { padding: 22px 14px; }
-      .timeline { padding-left: 28px; }
-      .section-title { font-size: 24px; }
-    }
-  </style>
+</style>
 </head>
+
 <body>
-  <div class="wrap">
-    <div class="window-bar">
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <div class="top-bar"></div>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
 
-    <header class="hero">
-      <img class="avatar" src="images/perfil.jpg" alt="Foto de Alex Fermino" onerror="this.src='https://placehold.co/300x300/1f2937/e5e7eb?text=Alex'">
+<div class="wrap">
 
-      <div>
-        <h1>Alex Fermino</h1>
-        <div class="sub">Manutenção • Automação • Soluções Digitais</div>
-        <p>Crio sistemas, dispositivos e soluções visuais para reduzir paradas, organizar a operação e transformar ideias técnicas em resultados reais.</p>
+<header class="hero">
 
-        <div class="hero-actions">
-          <a class="btn linkedin" href="https://www.linkedin.com/in/alex-fermino-44722563" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a class="btn whatsapp" href="https://wa.me/5511982604129" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-          <a class="btn dark" href="#" target="_blank" rel="noopener noreferrer">Baixar CV</a>
-        </div>
-      </div>
-    </header>
+<img class="avatar" src="images/perfil.jpg">
 
-    <section class="section" id="projetos">
-      <h2 class="section-title"><span>Projetos em Destaque</span></h2>
+<div>
 
-      <div class="projects-grid">
-        <article class="card">
-          <img src="images/carregador.png" alt="Carregador Inteligente" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Carregador'">
-          <div class="card-body">
-            <h3>Carregador Inteligente</h3>
-            <p>Carregador eletrônico com controle de tensão e aplicação voltada ao carregamento seguro de baterias e paleteiras elétricas.</p>
-            <a class="more" href="carregador.html">Ver Detalhes</a>
-          </div>
-        </article>
+<h1>Alex Fermino</h1>
 
-        <article class="card">
-          <img src="images/3d.jpg" alt="Projeto 3D" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Impressao+3D'">
-          <div class="card-body">
-            <h3>Projetos em Impressão 3D</h3>
-            <p>Modelagem e fabricação de peças técnicas para prototipagem, sensores, suportes e melhorias aplicadas.</p>
-            <a class="more" href="#laboratorio">Ver Detalhes</a>
-          </div>
-        </article>
+<div class="sub">
+Experiência Profissional • Automação • Projetos Técnicos
+</div>
 
-        <article class="card">
-          <img src="images/painel de paradas de maquina.jpg" alt="Dashboard de Produção" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Dashboard'">
-          <div class="card-body">
-           <h3>Sistema de Paradas e Monitoramento</h3>
-<p>Painel visual que usa os dados coletados pela ESP32 para mostrar máquina rodando, parada, tempo por turno e gráficos de acompanhamento.</p>
-<a class="more" href="dashboard.html">Ver Detalhes</a>
-          </div>
-        </article>
+<p>
+Este espaço reúne minha trajetória profissional, experiências técnicas
+e projetos desenvolvidos em automação, eletrônica, monitoramento de máquinas
+e impressão 3D.
+</p>
 
-        <article class="card">
-          <img src="images/Sensor de rotacao.jpg" alt="Monitoramento com ESP32" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Monitoramento'">
-          <div class="card-body">
-            <h3>Monitoramento com ESP32</h3>
-            <p>Sistema com sensor e lógica de monitoramento para acompanhar rotação, parada e comportamento da máquina.</p>
-            <a class="more" href="#laboratorio">Ver Detalhes</a>
-          </div>
-        </article>
-      </div>
-    </section>
+<div class="hero-actions">
 
-    <section class="section" id="habilidades">
-      <h2 class="section-title"><span>Habilidades</span></h2>
-      <div class="skills-box">
-        <ul class="skills-list">
-          <li>Automação Industrial</li>
-          <li>HTML, JavaScript e Node-RED</li>
-          <li>Impressão 3D e Prototipagem</li>
-          <li>ESP32, Arduino e sistemas embarcados</li>
-          <li>Desenvolvimento de dispositivos e soluções práticas</li>
-        </ul>
-      </div>
-    </section>
+<a class="btn linkedin" href="https://www.linkedin.com/in/alex-fermino-44722563" target="_blank">
+LinkedIn
+</a>
 
-    <section class="section" id="laboratorio">
-      <h2 class="section-title"><span>Laboratório e Desenvolvimento</span></h2>
+<a class="btn whatsapp" href="https://wa.me/5511982604129" target="_blank">
+WhatsApp
+</a>
 
-      <div class="gallery-grid">
-        <article class="card">
-          <img src="images/Laboratorio.jpg" alt="Laboratório" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Laboratorio'">
-          <div class="card-body">
-            <h3>Laboratório em Casa</h3>
-            <p>Espaço montado para desenvolver eletrônica, automação, modelagem 3D e testes práticos de projetos.</p>
-          </div>
-        </article>
+<a class="btn dark" href="#">
+Baixar CV
+</a>
 
-        <article class="card">
-          <img src="images/impressora.jpg" alt="Impressora 3D" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Impressora'">
-          <div class="card-body">
-            <h3>Impressora 3D</h3>
-            <p>Uso da impressora 3D para produzir peças funcionais, suportes, caixas e componentes personalizados.</p>
-          </div>
-        </article>
+</div>
 
-        <article class="card">
-          <img src="images/Case para impressora.jpg" alt="Case da impressora" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Case'">
-          <div class="card-body">
-            <h3>Case para Impressora</h3>
-            <p>Estrutura desenvolvida para melhorar o uso da impressora e dar mais controle ao ambiente de impressão.</p>
-          </div>
-        </article>
+</div>
 
-        <article class="card">
-          <img src="images/Central de carregamento.jpg" alt="Central de carregamento" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Central+de+Carregamento'">
-          <div class="card-body">
-            <h3>Central de Carregamento</h3>
-            <p>Sinalização visual do processo de carga, tornando o uso mais intuitivo e seguro no ambiente de trabalho.</p>
-          </div>
-        </article>
+</header>
 
-        <article class="card">
-          <img src="images/Caixa voltimetro.jpg" alt="Caixa com voltímetro" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Caixa+Voltimetro'">
-          <div class="card-body">
-            <h3>Caixa com Voltímetro</h3>
-            <p>Caixa desenvolvida para abrigar componentes eletrônicos e facilitar visualização e controle do sistema.</p>
-          </div>
-        </article>
+<section class="section">
 
-        <article class="card">
-          <img src="images/Conector ar.jpg" alt="Conector de ar" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Conector'">
-          <div class="card-body">
-            <h3>Conector de Ar</h3>
-            <p>Exemplo de projeto funcional voltado a adaptação, melhoria e aplicação prática em ambiente técnico.</p>
-          </div>
-        </article>
-      </div>
-    </section>
+<h2 class="section-title">
+Projetos Desenvolvidos
+</h2>
 
-    <section class="section" id="experiencia">
-      <h2 class="section-title"><span>Experiência</span></h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-card">
-            <div class="timeline-period">Atual</div>
-            <h3>Técnico de Manutenção Elétrica</h3>
-            <p>Atuação com manutenção elétrica, diagnóstico de falhas, reparos e suporte técnico em ambiente industrial.</p>
-          </div>
-        </div>
+<div class="projects-grid">
 
-        <div class="timeline-item">
-          <div class="timeline-card">
-            <div class="timeline-period">Cargo anterior</div>
-            <h3>Técnico de Manutenção</h3>
-            <p>Execução de manutenção corretiva e preventiva, apoio técnico e acompanhamento de equipamentos e sistemas.</p>
-          </div>
-        </div>
+<div class="card">
 
-        <div class="timeline-item">
-          <div class="timeline-card">
-            <div class="timeline-period">Cargo anterior</div>
-            <h3>Especialista de Teste</h3>
-            <p>Responsável por testes, análise de funcionamento e validação técnica de equipamentos e sistemas.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<img src="images/carregador.png">
 
-    <section class="section" id="contato">
-      <h2 class="section-title"><span>Entre em Contato</span></h2>
+<div class="card-body">
 
-      <div class="contact-grid">
-        <div class="contact-box">
-          <a class="contact-item" href="https://wa.me/5511982604129" target="_blank" rel="noopener noreferrer">
-            <span class="icon green">☎</span>
-            <span>Enviar WhatsApp</span>
-          </a>
+<h3>Carregador Inteligente</h3>
 
-          <a class="contact-item" href="mailto:alexfermino_9@hotmail.com">
-            <span class="icon">✉</span>
-            <span>E-mail: alexfermino_9@hotmail.com</span>
-          </a>
+<p>
+Sistema eletrônico para carregamento seguro de paleteiras elétricas
+com sinalização visual de status.
+</p>
 
-          <div class="small-note">
-            Se quiser, no próximo passo eu ajusto os textos dos projetos para ficar com linguagem ainda mais profissional e também posso trocar o botão “Baixar CV” para abrir seu currículo em PDF.
-          </div>
-        </div>
+<a class="more" href="carregador.html">
+Ver Detalhes
+</a>
 
-        <div class="contact-box">
-          <form class="form" onsubmit="event.preventDefault(); alert('Formulário visual. Posso ligar isso ao WhatsApp ou e-mail depois.');">
-            <input class="input" type="text" placeholder="Seu Nome" />
-            <input class="input" type="email" placeholder="Seu E-mail" />
-            <textarea class="textarea" placeholder="Sua Mensagem"></textarea>
-            <button class="btn linkedin submit" type="submit">Enviar</button>
-          </form>
-        </div>
-      </div>
-    </section>
-  </div>
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="images/3d.jpg">
+
+<div class="card-body">
+
+<h3>Projetos em Impressão 3D</h3>
+
+<p>
+Modelagem e fabricação de peças técnicas para sensores,
+suportes e prototipagem.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="images/painel de paradas de maquina.jpg">
+
+<div class="card-body">
+
+<h3>Sistema de Paradas e Monitoramento</h3>
+
+<p>
+Painel visual baseado em dados coletados pela ESP32 para
+analisar tempo de parada e funcionamento das máquinas.
+</p>
+
+<a class="more" href="dashboard.html">
+Ver Detalhes
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="images/Sensor de rotacao.jpg">
+
+<div class="card-body">
+
+<h3>Monitoramento com ESP32</h3>
+
+<p>
+Sistema embarcado para detectar rotação,
+tempo rodado e comportamento da máquina.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Habilidades
+</h2>
+
+<ul class="skills-list">
+
+<li>Automação Industrial</li>
+
+<li>HTML • JavaScript • Node-RED</li>
+
+<li>ESP32 • Arduino • Sistemas embarcados</li>
+
+<li>Impressão 3D e Prototipagem</li>
+
+<li>Desenvolvimento de soluções técnicas</li>
+
+</ul>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Desenvolvimento Técnico e Prático
+</h2>
+
+<div class="gallery-grid">
+
+<div class="card">
+<img src="images/Laboratorio.jpg">
+</div>
+
+<div class="card">
+<img src="images/impressora.jpg">
+</div>
+
+<div class="card">
+<img src="images/Central de carregamento.jpg">
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Experiência
+</h2>
+
+<div class="timeline">
+
+<div class="timeline-card">
+
+<div class="timeline-period">
+Atual
+</div>
+
+<h3>Técnico de Manutenção Elétrica</h3>
+
+<p>
+Manutenção elétrica industrial,
+diagnóstico de falhas e suporte técnico.
+</p>
+
+</div>
+
+<div class="timeline-card">
+
+<div class="timeline-period">
+Anterior
+</div>
+
+<h3>Técnico de Manutenção</h3>
+
+</div>
+
+<div class="timeline-card">
+
+<div class="timeline-period">
+Anterior
+</div>
+
+<h3>Especialista de Teste</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Contato Profissional
+</h2>
+
+<div class="contact-grid">
+
+<div class="contact-box">
+
+<a class="contact-item" href="https://wa.me/5511982604129" target="_blank">
+
+<div class="icon green">☎</div>
+
+Enviar WhatsApp
+
+</a>
+
+<a class="contact-item" href="mailto:alexfermino_9@hotmail.com">
+
+<div class="icon">✉</div>
+
+alexfermino_9@hotmail.com
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
 </body>
 </html>
