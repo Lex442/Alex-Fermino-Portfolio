@@ -63,12 +63,14 @@ color:#d8e1ef;
 margin-top:16px;
 color:var(--muted);
 font-size:18px;
+line-height:1.6;
 }
 
 .hero-actions{
 margin-top:20px;
 display:flex;
 gap:10px;
+flex-wrap:wrap;
 }
 
 .btn{
@@ -95,7 +97,7 @@ margin-bottom:20px;
 
 .projects-grid{
 display:grid;
-grid-template-columns:repeat(4,1fr);
+grid-template-columns:repeat(5,1fr);
 gap:18px;
 }
 
@@ -110,12 +112,21 @@ background:#0f1d2f;
 border-radius:16px;
 overflow:hidden;
 box-shadow:var(--shadow);
+transition:transform .18s ease, border-color .18s ease;
+border:1px solid rgba(255,255,255,.06);
+}
+
+.card:hover{
+transform:translateY(-4px);
+border-color:rgba(47,140,255,.35);
 }
 
 .card img{
 width:100%;
 height:180px;
 object-fit:cover;
+display:block;
+background:#172131;
 }
 
 .card-body{
@@ -124,11 +135,16 @@ padding:16px;
 
 .card h3{
 margin:0 0 10px;
+font-size:20px;
+line-height:1.25;
 }
 
 .card p{
 color:var(--muted);
 font-size:14px;
+line-height:1.5;
+margin:0;
+min-height:88px;
 }
 
 .more{
@@ -140,16 +156,19 @@ background:#1a2432;
 border-radius:8px;
 text-decoration:none;
 color:white;
+font-weight:bold;
 }
 
 .skills-list{
 list-style:none;
 padding:0;
 margin:0;
+display:grid;
+gap:10px;
 }
 
 .skills-list li{
-margin-bottom:10px;
+margin-bottom:0;
 }
 
 .timeline{
@@ -203,6 +222,60 @@ border-radius:8px;
 background:#1faf59;
 }
 
+@media (max-width: 1200px){
+.projects-grid{
+grid-template-columns:repeat(3,1fr);
+}
+}
+
+@media (max-width: 900px){
+.hero{
+grid-template-columns:1fr;
+text-align:center;
+}
+.avatar{
+margin:0 auto;
+}
+.hero-actions{
+justify-content:center;
+}
+.projects-grid{
+grid-template-columns:repeat(2,1fr);
+}
+.gallery-grid{
+grid-template-columns:repeat(2,1fr);
+}
+.contact-grid{
+grid-template-columns:1fr;
+}
+}
+
+@media (max-width: 600px){
+.wrap{
+width:min(100% - 12px,100%);
+margin:8px auto 20px;
+}
+.section{
+padding:22px 14px;
+}
+.hero{
+padding:24px 18px;
+}
+.hero h1{
+font-size:38px;
+}
+.sub{
+font-size:18px;
+}
+.projects-grid,
+.gallery-grid{
+grid-template-columns:1fr;
+}
+.section-title{
+font-size:26px;
+}
+}
+
 </style>
 </head>
 
@@ -212,7 +285,7 @@ background:#1faf59;
 
 <header class="hero">
 
-<img class="avatar" src="images/perfil.jpg">
+<img class="avatar" src="images/perfil.jpg" alt="Foto de Alex Fermino" onerror="this.src='https://placehold.co/300x300/1f2937/e5e7eb?text=Alex'">
 
 <div>
 
@@ -224,17 +297,17 @@ Experiência Profissional • Automação • Projetos Técnicos
 
 <p>
 Este espaço reúne minha trajetória profissional, experiências técnicas
-e projetos desenvolvidos em automação, eletrônica, monitoramento de máquinas
-e impressão 3D.
+e projetos desenvolvidos em automação, eletrônica, monitoramento de máquinas,
+impressão 3D e criação de aplicativos voltados para o ambiente industrial.
 </p>
 
 <div class="hero-actions">
 
-<a class="btn linkedin" href="https://www.linkedin.com/in/alex-fermino-44722563" target="_blank">
+<a class="btn linkedin" href="https://www.linkedin.com/in/alex-fermino-44722563" target="_blank" rel="noopener noreferrer">
 LinkedIn
 </a>
 
-<a class="btn whatsapp" href="https://wa.me/5511982604129" target="_blank">
+<a class="btn whatsapp" href="https://wa.me/5511982604129" target="_blank" rel="noopener noreferrer">
 WhatsApp
 </a>
 
@@ -258,7 +331,7 @@ Projetos Desenvolvidos
 
 <div class="card">
 
-<img src="images/carregador.png">
+<img src="images/carregador.png" alt="Carregador Inteligente" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Carregador'">
 
 <div class="card-body">
 
@@ -279,7 +352,7 @@ Ver Detalhes
 
 <div class="card">
 
-<img src="images/3d.jpg">
+<img src="images/3d.jpg" alt="Projeto 3D" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Impressao+3D'">
 
 <div class="card-body">
 
@@ -290,13 +363,17 @@ Modelagem e fabricação de peças técnicas para sensores,
 suportes e prototipagem.
 </p>
 
+<a class="more" href="#desenvolvimento">
+Ver Detalhes
+</a>
+
 </div>
 
 </div>
 
 <div class="card">
 
-<img src="images/painel de paradas de maquina.jpg">
+<img src="images/painel de paradas de maquina.jpg" alt="Sistema de Paradas e Monitoramento" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Monitoramento'">
 
 <div class="card-body">
 
@@ -317,7 +394,7 @@ Ver Detalhes
 
 <div class="card">
 
-<img src="images/Sensor de rotacao.jpg">
+<img src="images/Sensor de rotacao.jpg" alt="Monitoramento com ESP32" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=ESP32'">
 
 <div class="card-body">
 
@@ -327,6 +404,31 @@ Ver Detalhes
 Sistema embarcado para detectar rotação,
 tempo rodado e comportamento da máquina.
 </p>
+
+<a class="more" href="#desenvolvimento">
+Ver Detalhes
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="images/App mobile de manuteção.png" alt="Aplicativos Mobile de Manutenção" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Apps+Mobile'">
+
+<div class="card-body">
+
+<h3>Aplicativos Mobile de Manutenção</h3>
+
+<p>
+Desenvolvimento de aplicativos para controle de manutenção,
+solicitação de SM, chamados técnicos e organização de almoxarifado.
+</p>
+
+<a class="more" href="apps.html">
+Ver Detalhes
+</a>
 
 </div>
 
@@ -366,7 +468,7 @@ Habilidades
   
 </section>
 
-<section class="section">
+<section class="section" id="desenvolvimento">
 
 <h2 class="section-title">
 Desenvolvimento Técnico e Prático
@@ -375,15 +477,15 @@ Desenvolvimento Técnico e Prático
 <div class="gallery-grid">
 
 <div class="card">
-<img src="images/Laboratorio.jpg">
+<img src="images/Laboratorio.jpg" alt="Laboratório" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Laboratorio'">
 </div>
 
 <div class="card">
-<img src="images/impressora.jpg">
+<img src="images/impressora.jpg" alt="Impressora 3D" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Impressora'">
 </div>
 
 <div class="card">
-<img src="images/Central de carregamento.jpg">
+<img src="images/Central de carregamento.jpg" alt="Central de carregamento" onerror="this.src='https://placehold.co/800x500/1a2433/e5e7eb?text=Carregamento'">
 </div>
 
 </div>
@@ -421,6 +523,11 @@ Anterior
 
 <h3>Técnico de Manutenção</h3>
 
+<p>
+Execução de manutenção corretiva, preventiva e apoio técnico
+em equipamentos e sistemas industriais.
+</p>
+
 </div>
 
 <div class="timeline-card">
@@ -430,6 +537,11 @@ Anterior
 </div>
 
 <h3>Especialista de Teste</h3>
+
+<p>
+Atuação com testes, validação técnica e análise de funcionamento
+de sistemas e equipamentos.
+</p>
 
 </div>
 
@@ -447,7 +559,7 @@ Contato Profissional
 
 <div class="contact-box">
 
-<a class="contact-item" href="https://wa.me/5511982604129" target="_blank">
+<a class="contact-item" href="https://wa.me/5511982604129" target="_blank" rel="noopener noreferrer">
 
 <div class="icon green">☎</div>
 
